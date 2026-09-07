@@ -1,0 +1,100 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+    Контакты | CatDjango
+{% endblock %}
+
+{% block content %}
+    <div class="row justify-content-center g-4">
+
+        <div class="col-lg-5">
+            <div class="h-100 bg-dark text-white rounded-4 shadow p-4 p-md-5">
+                <span class="badge text-bg-warning text-dark px-3 py-2 mb-3">
+                    Обратная связь
+                </span>
+
+                <h1 class="display-6 fw-bold mb-4">
+                    Контакты
+                </h1>
+
+                <p class="text-light-emphasis">
+                    Эта страница демонстрирует пример контактного раздела
+                    Bootstrap-сайта. Пока форма не отправляет данные,
+                    но позже её можно подключить к Django.
+                </p>
+
+                <hr class="border-secondary my-4">
+
+                <p class="mb-3">
+                    <i class="bi bi-envelope-fill text-warning me-2"></i>
+                    Email: example@catdjango.local
+                </p>
+
+                <p class="mb-3">
+                    <i class="bi bi-github text-warning me-2"></i>
+                    GitHub: AndyKlep
+                </p>
+
+                <p class="mb-0">
+                    <i class="bi bi-code-slash text-warning me-2"></i>
+                    Стек: Python, Django, Bootstrap
+                </p>
+            </div>
+        </div>
+
+        <div class="col-lg-7">
+            <div class="bg-white rounded-4 shadow-sm p-4 p-md-5">
+                <h2 class="h3 fw-bold mb-4">
+                    Напишите сообщение
+                </h2>
+
+                <form>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">
+                            Ваше имя
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="name"
+                            placeholder="Например, Иван"
+                        >
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">
+                            Электронная почта
+                        </label>
+
+                        <input
+                            type="email"
+                            class="form-control"
+                            id="email"
+                            placeholder="example@email.com"
+                        >
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="message" class="form-label">
+                            Сообщение
+                        </label>
+
+                        <textarea
+                            class="form-control"
+                            id="message"
+                            rows="5"
+                            placeholder="Введите текст сообщения..."
+                        ></textarea>
+                    </div>
+
+                    <button type="button" class="btn btn-primary">
+                        <i class="bi bi-send-fill me-1"></i>
+                        Отправить
+                    </button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

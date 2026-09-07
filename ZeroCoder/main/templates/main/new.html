@@ -1,9 +1,128 @@
-{% extends 'main/layoute.html' %}
+{% extends 'main/layout.html' %}
 
 {% block title %}
-    <title>Вторая страничка </title>
+    Возможности | CatDjango
 {% endblock %}
 
 {% block content %}
-    <h4>Это вторая страница сайта по уроку номер 2</h4>
+    <div class="text-center mb-5">
+        <span class="badge text-bg-primary px-3 py-2 mb-3">
+            Раздел проекта
+        </span>
+
+        <h1 class="display-5 fw-bold">
+            Возможности Django
+        </h1>
+
+        <p class="lead text-secondary mx-auto page-description">
+            На этой странице представлены основные навыки,
+            которые развиваются при создании учебного сайта.
+        </p>
+    </div>
+
+    <div class="row g-4">
+
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <i class="bi bi-signpost-split-fill text-primary display-6"></i>
+
+                    <h2 class="h4 fw-bold mt-3">
+                        URL-маршруты
+                    </h2>
+
+                    <p class="text-secondary mb-0">
+                        Каждая страница получает собственный адрес,
+                        например главная, контакты или раздел о проекте.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <i class="bi bi-code-square text-success display-6"></i>
+
+                    <h2 class="h4 fw-bold mt-3">
+                        Представления
+                    </h2>
+
+                    <p class="text-secondary mb-0">
+                        Python-функции в файле views.py обрабатывают запросы
+                        и возвращают пользователю HTML-страницы.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <i class="bi bi-layout-text-window-reverse text-warning display-6"></i>
+
+                    <h2 class="h4 fw-bold mt-3">
+                        Шаблоны
+                    </h2>
+
+                    <p class="text-secondary mb-0">
+                        HTML-шаблоны отделяют внешний вид сайта
+                        от логики, написанной на Python.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <i class="bi bi-database-fill text-danger display-6"></i>
+
+                    <h2 class="h4 fw-bold mt-3">
+                        База данных
+                    </h2>
+
+                    <p class="text-secondary mb-0">
+                        В дальнейшем можно подключить модели Django
+                        и хранить данные в базе SQLite.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <i class="bi bi-ui-checks-grid text-info display-6"></i>
+
+                    <h2 class="h4 fw-bold mt-3">
+                        Формы
+                    </h2>
+
+                    <p class="text-secondary mb-0">
+                        Формы позволяют получать данные от пользователей
+                        и проверять правильность введённой информации.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <i class="bi bi-palette-fill text-secondary display-6"></i>
+
+                    <h2 class="h4 fw-bold mt-3">
+                        Оформление
+                    </h2>
+
+                    <p class="text-secondary mb-0">
+                        Bootstrap предоставляет сетку, кнопки, карточки,
+                        навигацию и адаптивные компоненты.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
 {% endblock %}

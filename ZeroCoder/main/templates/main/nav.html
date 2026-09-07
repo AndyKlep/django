@@ -1,4 +1,71 @@
-<Ul>
-    <li><a href="">Главная страница</a></Li>
-    <li><a href="">Вторая страница</a></Li>
-</ul>
+{% load static %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <div class="container">
+
+        <a
+            class="navbar-brand d-flex align-items-center gap-2 fw-bold"
+            href="{% url 'home' %}"
+        >
+            <img
+                src="{% static 'main/img/cat.png' %}"
+                alt="Логотип CatDjango"
+                width="42"
+                height="42"
+                class="rounded-circle border border-warning"
+            >
+
+            <span>
+                <i class="bi bi-cat me-1"></i>
+                CatDjango
+            </span>
+        </a>
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNavbar"
+            aria-controls="mainNavbar"
+            aria-expanded="false"
+            aria-label="Открыть меню"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">
+                        <i class="bi bi-house-door-fill me-1"></i>
+                        Главная
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'new' %}">
+                        <i class="bi bi-stars me-1"></i>
+                        Возможности
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'about' %}">
+                        <i class="bi bi-person-circle me-1"></i>
+                        О проекте
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="btn btn-warning ms-lg-2 mt-2 mt-lg-0" href="{% url 'contacts' %}">
+                        <i class="bi bi-envelope-fill me-1"></i>
+                        Контакты
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+</nav>

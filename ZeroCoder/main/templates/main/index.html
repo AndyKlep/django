@@ -1,95 +1,126 @@
-{% extends 'main/layoute.html' %}
+{% extends 'main/layout.html' %}
+{% load static %}
 
 {% block title %}
     Главная | CatDjango
 {% endblock %}
 
 {% block content %}
-    <div class="row justify-content-center">
-        <div class="col-lg-10">
+    <section class="row align-items-center g-5">
 
-            <div class="text-center mb-5">
-                <span class="badge text-bg-warning px-3 py-2 mb-3">
-                    Мой первый Django-проект
-                </span>
+        <div class="col-lg-7">
+            <span class="badge text-bg-warning px-3 py-2 mb-3">
+                Мой первый Django-проект
+            </span>
 
-                <h1 class="display-5 fw-bold mb-3">
-                    Добро пожаловать в CatDjango!
-                </h1>
+            <h1 class="display-4 fw-bold mb-4">
+                Добро пожаловать в
+                <span class="text-primary">CatDjango</span>!
+            </h1>
 
-                <p class="lead text-secondary">
-                    Первый сайт, созданный с помощью Python, Django и Bootstrap.
+            <p class="lead text-secondary mb-4">
+                Учебный сайт, созданный с помощью Python, Django,
+                HTML, CSS и Bootstrap.
+            </p>
+
+            <p class="mb-4">
+                Этот проект помогает изучить устройство Django-приложения:
+                маршрутизацию, представления, наследование шаблонов,
+                подключение статических файлов и адаптивную вёрстку.
+            </p>
+
+            <div class="d-flex flex-wrap gap-2">
+                <a href="{% url 'new' %}" class="btn btn-primary btn-lg">
+                    Начать знакомство
+                    <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+
+                <a href="{% url 'about' %}" class="btn btn-outline-secondary btn-lg">
+                    О проекте
+                </a>
+            </div>
+        </div>
+
+        <div class="col-lg-5 text-center">
+            <div class="bg-white rounded-4 shadow p-4 p-md-5">
+                <img
+                    src="{% static 'main/img/cat.png' %}"
+                    alt="Кот CatDjango"
+                    class="img-fluid rounded-circle border border-4 border-warning shadow-sm"
+                    width="260"
+                    height="260"
+                >
+
+                <h2 class="h4 fw-bold mt-4">
+                    CatDjango
+                </h2>
+
+                <p class="text-secondary mb-0">
+                    Учимся создавать сайты шаг за шагом.
                 </p>
             </div>
+        </div>
 
-            <div class="card border-0 shadow-sm">
-                <div class="card-body p-4 p-md-5">
+    </section>
 
-                    <p>
-                        Добро пожаловать в <strong>CatDjango</strong> — мой первый сайт,
-                        созданный с помощью Django.
+    <section class="row g-4 mt-5">
+
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <div class="feature-icon bg-primary text-white mb-3">
+                        <i class="bi bi-filetype-py"></i>
+                    </div>
+
+                    <h2 class="h4 fw-bold">
+                        Python
+                    </h2>
+
+                    <p class="text-secondary mb-0">
+                        Django написан на Python и помогает создавать
+                        серверную часть веб-приложений.
                     </p>
-
-                    <p>
-                        Этот проект помогает мне изучать разработку веб-приложений на Python.
-                    </p>
-
-                    <p>
-                        Django позволяет быстро создавать надёжные, удобные и современные сайты.
-                    </p>
-
-                    <p>
-                        На этой странице я знакомлюсь с основами шаблонов, представлений и маршрутизации.
-                    </p>
-
-                    <p>
-                        Для красивого оформления интерфейса используется Bootstrap.
-                    </p>
-
-                    <p>
-                        Он делает сайт адаптивным и удобным для просмотра на компьютере и телефоне.
-                    </p>
-
-                    <p>
-                        Проект состоит из отдельных страниц, HTML-шаблонов и Python-представлений.
-                    </p>
-
-                    <p>
-                        Главная страница отображает основную информацию о моём Django-проекте.
-                    </p>
-
-                    <p>
-                        Навигационное меню позволяет быстро переходить между разделами сайта.
-                    </p>
-
-                    <p>
-                        Статические файлы отвечают за подключение стилей, изображений и других ресурсов.
-                    </p>
-
-                    <p>
-                        В будущем на сайте появятся новые разделы и полезные функции.
-                    </p>
-
-                    <p>
-                        Я планирую добавить формы для ввода информации пользователями.
-                    </p>
-
-                    <p>
-                        Также можно будет подключить модели Django и базу данных SQLite.
-                    </p>
-
-                    <p>
-                        Сайт сможет сохранять, изменять и отображать записи из базы данных.
-                    </p>
-
-                    <p class="mb-0">
-                        Этот проект — мой практический шаг к освоению backend-разработки на Python.
-                        Спасибо за посещение <strong>CatDjango</strong>!
-                    </p>
-
                 </div>
             </div>
-
         </div>
-    </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <div class="feature-icon bg-success text-white mb-3">
+                        <i class="bi bi-window-stack"></i>
+                    </div>
+
+                    <h2 class="h4 fw-bold">
+                        Шаблоны
+                    </h2>
+
+                    <p class="text-secondary mb-0">
+                        Общий макет сайта повторно используется на каждой
+                        странице благодаря наследованию шаблонов.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <div class="feature-icon bg-warning text-dark mb-3">
+                        <i class="bi bi-phone"></i>
+                    </div>
+
+                    <h2 class="h4 fw-bold">
+                        Bootstrap
+                    </h2>
+
+                    <p class="text-secondary mb-0">
+                        Компоненты Bootstrap делают интерфейс удобным
+                        на компьютерах, планшетах и телефонах.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </section>
 {% endblock %}
