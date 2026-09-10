@@ -1,17 +1,66 @@
 {% extends 'main/layout.html' %}
 
 {% block title %}
-	<title>Новостная страница</title>
+    Новости | CatDjango
 {% endblock %}
 
 {% block content %}
-<h1>Новостная страница</h1>
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-5">
+        <div>
+            <span class="badge text-bg-primary mb-2">
+                Раздел сайта
+            </span>
 
-{% for new in news %}
-	<div>
-		<h3> {{ new.title }} </h3>
-		<p> {{ new.short_description }} </p>
-	</div>
-{% endfor %}
+            <h1 class="display-5 fw-bold mb-0">
+                Новости
+            </h1>
+        </div>
 
+        <span class="text-secondary">
+            Всего новостей: {{ news|length }}
+        </span>
+    </div>
+
+    <div class="row g-4">
+        {% for item in news %}
+            <div class="col-md-6 col-lg-4">
+                <article class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4 d-flex flex-column">
+
+                        <h2 class="h4 fw-bold">
+                            {{ item.title }}
+                        </h2>
+
+                        <p class="text-secondary">
+                            {{ item.short_description }}
+                        </p>
+
+                        <p class="mb-4">
+                            {{ item.text }}
+                        </p>
+
+                        <div class="mt-auto pt-3 border-top">
+                            <div class="small text-secondary">
+                                <i class="bi bi-person-fill me-1"></i>
+                                Автор: {{ item.author }}
+                            </div>
+
+                            <div class="small text-secondary mt-1">
+                                <i class="bi bi-calendar-event me-1"></i>
+                                {{ item.pub_date|date:"d.m.Y H:i" }}
+                            </div>
+                        </div>
+
+                    </div>
+                </article>
+            </div>
+        {% empty %}
+            <div class="col-12">
+                <div class="alert alert-info mb-0">
+                    <i class="bi bi-info-circle-fill me-2"></i>
+                    Новостей пока нет. Добавьте первую новость через админ-панель Django.
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
