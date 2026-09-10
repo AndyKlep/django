@@ -7,6 +7,7 @@ class News_post(models.Model):
     text = models.TextField('Новость')
     pub_date = models.DateTimeField('Дата публикации')
 
+
     def __str__(self):
         return self.title
 
